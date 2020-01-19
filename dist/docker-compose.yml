@@ -15,7 +15,7 @@ services:
 
   mongo:
     container_name: leanote_db
-    image: jkf19980216/mongo
+    image: mongo
     volumes:
       - ./data:/data/db
       - /etc/localtime:/etc/localtime:ro
@@ -23,7 +23,7 @@ services:
 
   initdb:
     container_name: leanote_init
-    image: jkf19980216/mongo
+    image: mongo
     links:
       - mongo
     volumes:
