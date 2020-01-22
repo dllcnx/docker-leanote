@@ -1,5 +1,5 @@
 FROM golang:alpine
-ARG LEANOTE_VERSION=2.6.1
+ARG LEANOTE_VERSION=2.3
 RUN apk add --no-cache git && \
     go get -v github.com/revel/cmd/revel && \
     mkdir -p /go/src/github.com/leanote/leanote/ && \
