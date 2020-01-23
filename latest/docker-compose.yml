@@ -2,12 +2,11 @@ version: '2'
 services:
   leanote:
     container_name: leanote_app
-    image: jkf19980216/leanote:dist
+    image: jkf19980216/leanote:latest
     ports:
       - "9000:9000"
     volumes:
-      - ./app.conf:/leanote/conf/app.conf
-      - ./upload:/leanote/public/upload
+      - ./leanote:/leanote
       - /etc/localtime:/etc/localtime:ro
     links:
       - mongo
@@ -28,7 +27,7 @@ services:
       - mongo
     volumes:
       - ./initdb.sh:/initdb.sh
-      - ./mongodb_backup:/mongodb_backup
+      - ./leanote/mongodb_backup:/mongodb_backup
     command: sh /initdb.sh
 
 networks:

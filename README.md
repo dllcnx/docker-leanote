@@ -18,6 +18,30 @@ chmod +x /usr/local/bin/docker-compose
 git clone https://github.com/KeiferJu/docker-leanote.git
 ```
 ## 安装
+总共在网上zuolan/leanote和foolishflyfox/leanote等镜像的基础上整合制作，src和dist版本（编译和源码）因为采取alpine为基础镜像，编译安装pdf
+插件时可能比较麻烦，而且配置邮箱也失败。但是它镜像的大小很小，适合用不到pdf导出和邮箱并且要求镜像大小的。而latest版本比较大，pdf和邮箱都可以正常使用。
+
+
+### 推荐版(latest)
+
+首先在这个文件夹内执行：
+```
+bash get-latest.sh
+```
+
+然后执行：
+```
+docker-compose run --rm initdb
+```
+
+最后启动：
+```
+docker-compose up -d leanote
+```
+
+打开 localhost:9000 即可看到部署成功。
+
+
 
 ### 编译版(dist)
 
