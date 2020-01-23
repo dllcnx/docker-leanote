@@ -6,7 +6,9 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./leanote:/leanote
+      - ./leanote:/leanote/data
+      - ./views:/leanote/app/views
+      - ./app.conf:/leanote/conf/app.conf
       - /etc/localtime:/etc/localtime:ro
     links:
       - mongo

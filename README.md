@@ -22,8 +22,8 @@ git clone https://github.com/KeiferJu/docker-leanote.git
 插件时可能比较麻烦，而且配置邮箱也失败。但是它镜像的大小很小，适合用不到pdf导出和邮箱并且要求镜像大小的。而latest版本比较大，pdf和邮箱都可以正常使用。
 
 
-### 推荐版(latest)
-集成了pdf导出插件wkhtmltopdf，邮箱配置没问题，并且暴露源码可以进行修改，镜像比较大。
+### github(latest)
+这个版本直接从github拉取源码，集成了pdf导出插件wkhtmltopdf，邮箱配置没问题，并且暴露源码可以进行修改，镜像比较大。
 首先在这个文件夹内执行：
 ```
 bash get-latest.sh

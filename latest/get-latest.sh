@@ -1,6 +1,6 @@
 #! bin/sh
-LEANOTE_VERSION=2.6.1
-wget https://jaist.dl.sourceforge.net/project/leanote-bin/${LEANOTE_VERSION}/leanote-linux-amd64-v${LEANOTE_VERSION}.bin.tar.gz
-tar zxf leanote-linux-amd64-v${LEANOTE_VERSION}.bin.tar.gz
-rm leanote-linux-amd64-v${LEANOTE_VERSION}.bin.tar.gz
-sed -i 's/db.host=127.0.0.1/db.host=mongo/g' ./leanote/conf/app.conf
+rm -rf leanote app.conf leanote_cache views && mkdir leanote
+git clone https://github.com/leanote/leanote.git leanote_cache
+mv ./leanote_cache/conf/app.conf ./ && mv ./leanote_cache/app/views ./ && mv ./leanote_cache/public ./leanote && mv ./leanote_cache/mongodb_backup ./leanote && mkdir ./leanote/files && mkdir ./leanote/public/upload
+rm -rf leanote_cache
+sed -i 's/db.host=127.0.0.1/db.host=mongo/g' ./app.conf
